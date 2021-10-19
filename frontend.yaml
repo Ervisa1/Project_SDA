@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angular-new-frontend
+spec:
+  selector:
+    matchLabels:
+      app: angular
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: angular
+    spec:
+      containers:
+      - name: angular
+        image: ervisa/frontend-new:1
+        ports:
+        - containerPort: 80
